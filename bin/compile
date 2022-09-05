@@ -48,11 +48,11 @@ apt-get remove texlive* || true
 rm -rf /usr/local/texlive/20* || true
 rm -rf ~/.texlive20* || true
 
-if [ ! -f "$TEXLIVE_HOME/install-tl" ]; then
+#if [ ! -f "$TEXLIVE_HOME/install-tl" ]; then
     build-step "Downloading install-tl..."
     echo "Using $TEXLIVE_INSTALLER_URL"
     curl "$TEXLIVE_INSTALLER_URL" -L -s -o - | tar --strip-components=1 -xzf - -C "$TEXLIVE_HOME"
-fi
+#fi
 
 
 #if [ ! "$(which pdflatex)" ]; then
