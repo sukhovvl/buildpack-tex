@@ -44,6 +44,8 @@ if [ "$(ls -A "$TEXLIVE_CACHE")" ]; then
 fi
 
 build-step "Removing old TeX Live..."
+mkdir -p /var/cache/apt/archives/partial
+apt-get autoclean
 apt-get remove texlive*
 rm -rf /usr/local/texlive/20*
 rm -rf ~/.texlive20*
