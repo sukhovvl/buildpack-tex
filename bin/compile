@@ -44,9 +44,9 @@ if [ "$(ls -A "$TEXLIVE_CACHE")" ]; then
 fi
 
 build-step "Removing old TeX Live..."
-apt-get remove texlive* || exit 0
-rm -rf /usr/local/texlive/20* || exit 0
-rm -rf ~/.texlive20* || exit 0
+apt-get remove texlive* || true
+rm -rf /usr/local/texlive/20* || true
+rm -rf ~/.texlive20* || true
 
 if [ ! -f "$TEXLIVE_HOME/install-tl" ]; then
     build-step "Downloading install-tl..."
