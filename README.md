@@ -1,8 +1,5 @@
 # TeX Live buildpack for Heroku
 
-[![Build Status](https://travis-ci.org/Thermondo/heroku-buildpack-tex.svg?branch=master)](https://travis-ci.org/Thermondo/heroku-buildpack-tex)
-[![Latest Release](https://img.shields.io/github/tag/Thermondo/heroku-buildpack-tex.svg)](https://github.com/Thermondo/heroku-buildpack-tex/releases)
-
 This is a [Heroku buildpack][buildpacks] to run [TeX Live][tl] inside a dyno.
 
 This can be useful if you simply want to play around with TeX Live without
@@ -23,7 +20,7 @@ docker run -ti -v path/to/my/tex/files:/app heroku-tex
 ### Setup
 
 ```shell
-heroku buildpacks:add git://github.com/Thermondo/heroku-buildpack-tex.git#VERSION_NUMBER
+heroku buildpacks:add git://github.com/sukhovvl/buildpack-tex.git#VERSION_NUMBER
 ```
 
 ### How does it work?

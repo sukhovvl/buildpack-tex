@@ -43,11 +43,17 @@ if [ "$(ls -A "$TEXLIVE_CACHE")" ]; then
     cp -R "$TEXLIVE_CACHE/"* "$TEXLIVE_HOME"
 fi
 
+build-step "Removing old TeX Live..."
+apt-get remove texlive*
+rm -rf /usr/local/texlive/20*
+rm -rf ~/.texlive20*
+
 if [ ! -f "$TEXLIVE_HOME/install-tl" ]; then
     build-step "Downloading install-tl..."
     echo "Using $TEXLIVE_INSTALLER_URL"
     curl "$TEXLIVE_INSTALLER_URL" -L -s -o - | tar --strip-components=1 -xzf - -C "$TEXLIVE_HOME"
 fi
+
 
 if [ ! "$(which pdflatex)" ]; then
     build-step "Installing TeX Live..."
