@@ -55,7 +55,7 @@ if [ ! -f "$TEXLIVE_HOME/install-tl" ]; then
 fi
 
 
-if [ ! "$(which pdflatex)" ]; then
+#if [ ! "$(which pdflatex)" ]; then
     build-step "Installing TeX Live..."
 
     PROF=$BIN_DIR/../conf/texlive.profile
@@ -72,7 +72,7 @@ if [ ! "$(which pdflatex)" ]; then
     cd "$TEXLIVE_HOME"
 
     ./install-tl --repository="$TEXLIVE_REPOSITORY" --profile="$PROF"
-fi
+#fi
 
 build-step "Updating TeX Live..."
 
