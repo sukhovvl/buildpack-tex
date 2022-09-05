@@ -107,4 +107,8 @@ fi
 # shellcheck disable=SC2016
 echo 'export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH' > "$PROFILE_D"
 
+
+build-step "Installing latexmk"
+tlmgr install latexmk
+
 build-step "TeX Live installation successful!"
